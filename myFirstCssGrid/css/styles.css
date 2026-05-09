@@ -1,0 +1,188 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    grid-template-rows: repeat(3, auto);
+    gap: 20px;
+}
+
+.grid-item {
+    display: grid;
+    border: 2px solid black;
+    justify-items: center;
+    align-items: center;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(2, 180px);
+    grid-template-rows: repeat(1, auto);
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    background-color: blueviolet;
+    clip-path: circle(50% at 50% 50%);
+}
+
+.hamburger-menu {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+    justify-self: end;
+}
+
+
+.star {
+    width: 300px;
+    height: 300px;
+    background-color: burlywood;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, auto);
+    gap: 20px;
+}
+
+.frame {
+    width: 300px;
+    height: 300px;
+    background-color:gold;
+    clip-path: polygon(0% 0%, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%);
+}
+
+.message {
+    width: 150px;
+    height: 150px;
+    background-color:lightcoral;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+}
+
+.bevel {
+    width: 200px;
+    height: 200px;
+    background-color:lightpink;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+}
+
+.social-media div {
+    display: inline-block;
+    width: 90px;
+    height: 90px;
+    background-color:lightblue;
+    clip-path: circle(50% at 50% 50%);
+}
+
+.page-menu {
+    display: none;
+}
+
+.gallery {
+    display: none;
+}
+
+.contact-form {
+    display: none;
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+    body {
+        background-color: rgb(175, 171, 171);
+        color: #fff;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .menu {
+        width: 100%;
+        grid-template-columns: 1fr 2fr;
+
+    }
+
+    .hamburger-menu {
+        display: none;
+    }
+
+
+    .page-menu {
+        display: block;
+        list-style: none;
+        justify-self: end;
+        margin-right: 20px;
+    }
+
+    .page-menu li{
+        display: inline-block;
+        text-transform: uppercase;
+    }
+
+    .star {
+        justify-self: start;
+    }
+
+    .frame {
+        display: none;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+        gap: 20px;
+    }
+
+    .gallery-image {
+        width: 377px;
+        height: 210px;
+        background-color: rgb(48, 82, 150);
+        clip-path: polygon(100% 0, 100% 69%, 65% 100%, 0 100%, 0 0);
+    }
+
+    .bevel {
+        width: 300px;
+        height: 210px;
+        margin-top: 20px;
+    }
+
+    .message {
+        display: none;
+    }
+
+    .contact-form {
+        display: block;
+        width: 762px;
+        height: 422px;
+        background-color: rgb(95, 227, 196);
+        clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+
+    }
+
+    .social-media {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        gap: 20px;
+    }
+    
+}
+
+@media (min-width: 1025px) {
+    body {
+        background-color: rgb(238, 220, 198);
+    }
+
+    
+
+
+}
