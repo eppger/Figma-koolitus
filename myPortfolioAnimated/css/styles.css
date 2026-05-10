@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
 
+/* =====================
+   DESIGN TOKENS
+===================== */
 :root {
     --primary-color-text: #858383;
     --primary-color-headlines: #FF9BCF;
@@ -9,6 +12,9 @@
     --font-main: "Montserrat", sans-serif;
 }
 
+/* =====================
+   RESET & BASE
+===================== */
 body {
     margin: 0;
     padding: 0;
@@ -23,14 +29,17 @@ body {
     box-sizing: inherit;
 }
 
-.container {
-    width: 100%;
-    background-color: var(--primary-color-background);
-}
-
 button {
     cursor: pointer;
     font-family: var(--font-main);
+}
+
+/* =====================
+   REUSABLE COMPONENTS
+===================== */
+.container {
+    width: 100%;
+    background-color: var(--primary-color-background);
 }
 
 hr {
@@ -55,8 +64,9 @@ hr {
     text-align: center;
 }
 
-/* MENU NAVIGATION */
-
+/* =====================
+   NAVIGATION
+===================== */
 .menu {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -103,7 +113,9 @@ hr {
     display: none;
 }
 
-
+/* =====================
+   HERO
+===================== */
 .profile {
     text-align: center;
 }
@@ -121,7 +133,9 @@ hr {
     display: none;
 }
 
-
+/* =====================
+   SECTIONS
+===================== */
 .my-works,
 .my-clients,
 .contact {
@@ -160,7 +174,9 @@ hr {
     display: none;
 }
 
-
+/* =====================
+   CLIENT CARDS
+===================== */
 .card {
     display: grid;
     grid-template-columns: 80px 1fr;
@@ -219,7 +235,9 @@ hr {
     line-height: 1.6;
 }
 
-
+/* =====================
+   CONTACT
+===================== */
 .contact {
     text-align: center;
 }
@@ -240,23 +258,14 @@ hr {
     border-radius: 8px;
 }
 
-.contact-form {
-    display: none;
-}
+.contact-form { display: none; }
+.contact-details { display: none; }
+.contact-image { display: none; }
+#contact-me-headline { display: none; }
 
-.contact-details {
-    display: none;
-}
-
-.contact-image {
-    display: none;
-}
-
-#contact-me-headline {
-    display: none;
-}
-
-
+/* =====================
+   SOCIAL MEDIA
+===================== */
 .social-media {
     width: 100%;
     text-align: center;
@@ -274,6 +283,9 @@ hr {
     margin: 8px 12px;
 }
 
+/* =====================
+   FOOTER
+===================== */
 footer {
     text-align: center;
     padding: 40px 0 24px;
@@ -282,36 +294,36 @@ footer {
 }
 
 
-@media (min-width: 600px) and (max-width: 1024px) {
+/* =====================
+   SHARED: 600px+
+   Tablet ja Desktop
+===================== */
+@media (min-width: 600px) {
 
+    /* --- Navigation --- */
     .hamburger { display: none; }
 
     .menu {
         grid-template-columns: auto 1fr;
-        padding: 12px 32px;
     }
 
-    .logo-span {
-        font-size: 36px;
+    .menu-list {
+        display: block;
+        text-align: end;
     }
-
-    .menu-list { display: block; }
 
     .menu-list ul {
         list-style: none;
         padding: 0;
         margin: 0;
         text-transform: uppercase;
-        font-size: 13px;
+        font-size: 16px;
         font-weight: 600;
-        letter-spacing: 0.8px;
         color: var(--primary-color-text-dark);
-        text-align: end;
     }
 
     .menu-list ul li {
         display: inline-block;
-        margin-left: 24px;
     }
 
     /* --- Hero --- */
@@ -320,21 +332,11 @@ footer {
         grid-template-columns: 1fr 2fr;
         align-items: center;
         text-align: start;
-        padding: 32px;
-        gap: 32px;
     }
 
     .profile-image {
         display: flex;
         justify-content: center;
-    }
-
-    .profile-image img {
-        width: 100%;
-        max-width: 260px;
-        height: 310px;
-        margin: 0;
-        border-radius: 12px;
     }
 
     .profile-learn-more {
@@ -346,19 +348,14 @@ footer {
     .profile-details span {
         display: block;
         font-family: var(--font-main);
-        font-size: 30px;
         font-weight: 700;
         color: var(--primary-color-headlines);
         line-height: 1.2;
-        margin-bottom: 14px;
     }
 
     .profile-details p {
         display: block;
-        font-size: 14px;
         color: var(--primary-color-text);
-        margin: 0 0 20px 0;
-        line-height: 1.65;
     }
 
     .profile-details button {
@@ -366,35 +363,26 @@ footer {
         background-color: var(--primary-color-buttons);
         color: var(--primary-color-headlines);
         font-family: var(--font-main);
-        font-size: 14px;
         font-weight: 600;
         border: 2px solid var(--primary-color-headlines);
-        padding: 11px 28px;
         border-radius: 8px;
     }
 
     /* --- Sections --- */
-
-    .my-works,
-    .my-clients,
-    .contact {
-        padding: 40px 32px 0;
-    }
-
     hr {
         margin: 0 0 10px 0;
     }
 
     .contact {
-        text-align: left;
+        text-align: start;
     }
 
     .headline h3 {
-        font-size: 34px;
         text-align: start;
     }
 
     .my-works .frame { display: none; }
+    .btn-contact { display: none; }
 
     .my-works-intro {
         display: block;
@@ -406,8 +394,135 @@ footer {
         margin-top: 8px;
     }
 
-    /* --- Gallery --- */
+    /* --- Contact --- */
+    #contact-me-headline { display: block; }
 
+    .contact-intro {
+        display: block;
+        margin-top: 8px;
+    }
+
+    .contact-form {
+        display: block;
+    }
+
+    .contact-form form {
+        text-align: start;
+        padding: 0;
+    }
+
+    label {
+        display: block;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--primary-color-text-dark);
+    }
+
+    input, textarea {
+        display: block;
+        width: 100%;
+        background-color: var(--primary-color-buttons);
+        border: none;
+        outline: none;
+        font-family: var(--font-main);
+        border-radius: 4px;
+    }
+
+    .contact-form button {
+        background-color: var(--primary-color-headlines);
+        color: #ffffff;
+        font-family: var(--font-main);
+        font-weight: 600;
+        font-size: 15px;
+        border: none;
+        border-radius: 6px;
+        margin: 0;
+        text-transform: none;
+    }
+
+    .contact-details {
+        display: block;
+    }
+
+    .contact-details ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 15px;
+        color: var(--primary-color-text-dark);
+    }
+
+    .contact-details ul li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* --- Social --- */
+    .social-media {
+        text-align: start;
+    }
+
+    .social-media-icons ul li {
+        margin: 0 16px 0 0;
+    }
+}
+
+
+/* =====================
+   TABLET: 600px–1024px
+===================== */
+@media (min-width: 600px) and (max-width: 1024px) {
+
+    /* --- Navigation --- */
+    .menu { padding: 12px 32px; }
+
+    .logo-span { font-size: 36px; }
+
+    .menu-list ul { letter-spacing: 0.8px; }
+
+    .menu-list ul li { margin-left: 24px; }
+
+    /* --- Hero --- */
+    .profile {
+        padding: 32px;
+        gap: 32px;
+    }
+
+    .profile-image img {
+        width: 100%;
+        max-width: 260px;
+        height: 310px;
+        margin: 0;
+        border-radius: 12px;
+    }
+
+    .profile-details span {
+        font-size: 30px;
+        margin-bottom: 14px;
+    }
+
+    .profile-details p {
+        font-size: 14px;
+        margin: 0 0 20px 0;
+        line-height: 1.65;
+    }
+
+    .profile-details button {
+        font-size: 14px;
+        padding: 11px 28px;
+    }
+
+    /* --- Sections --- */
+    .my-works,
+    .my-clients,
+    .contact {
+        padding: 40px 32px 0;
+    }
+
+    .headline h3 { font-size: 34px; }
+
+    /* --- Gallery --- */
     .gallery {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -424,10 +539,7 @@ footer {
     }
 
     /* --- Cards --- */
-    
-    .my-clients {
-        margin-top: 0;
-    }
+    .my-clients { margin-top: 0; }
 
     .card {
         grid-template-columns: 100px 1fr;
@@ -444,140 +556,47 @@ footer {
     .card p { font-size: 14px; }
 
     /* --- Contact --- */
-    .btn-contact { display: none; }
-
-    #contact-me-headline { display: block; }
-
-    .contact-intro {
-        display: block;
-        margin-top: 8px;
-    }
-
-    .contact-form {
-        display: block;
-        width: 100%;
-        margin-top: 24px;
-    }
-
-    .contact-form form {
-        text-align: start;
-        padding: 0;
-    }
-
-    label {
-        display: block;
-        font-size: 14px;
-        font-weight: 500;
-        color: var(--primary-color-text-dark);
-        margin-bottom: 4px;
-    }
+    label { margin-bottom: 4px; }
 
     input, textarea {
-        display: block;
-        width: 100%;
-        background-color: var(--primary-color-buttons);
-        border: none;
-        outline: none;
         padding: 10px 12px;
-        font-family: var(--font-main);
         font-size: 14px;
-        border-radius: 4px;
         margin-bottom: 16px;
     }
 
     input { height: 42px; }
 
-    .contact-form button {
-        background-color: var(--primary-color-headlines);
-        color: #ffffff;
-        font-family: var(--font-main);
-        font-weight: 600;
-        font-size: 15px;
-        border: none;
-        padding: 12px 32px;
-        border-radius: 6px;
-        margin: 0;
-        text-transform: none;
-    }
-
-    .contact-details {
-        display: block;
+    .contact-form {
+        width: 100%;
         margin-top: 24px;
     }
 
-    .contact-details ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        font-size: 15px;
-        color: var(--primary-color-text-dark);
-    }
+    .contact-form button { padding: 12px 32px; }
 
-    .contact-details ul li {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 12px;
-    }
+    .contact-details { margin-top: 24px; }
 
-    .social-media {
-        padding-top: 32px;
-        text-align: start;
-    }
-
-    .social-media-icons ul li {
-        margin: 0 16px 0 0;
-    }
+    .contact-details ul li { margin-bottom: 12px; }
 }
+
 
 /* =====================
    DESKTOP: 1025px+
 ===================== */
 @media (min-width: 1025px) {
 
-    .hamburger { display: none; }
-
-    .menu {
-        grid-template-columns: auto 1fr;
-        padding: 16px 48px;
-    }
+    /* --- Navigation --- */
+    .menu { padding: 16px 48px; }
 
     .logo-span { font-size: 40px; }
 
-    .menu-list {
-        display: block;
-        text-align: end;
-    }
+    .menu-list ul { letter-spacing: 1.2px; }
 
-    .menu-list ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        text-transform: uppercase;
-        font-size: 13px;
-        font-weight: 600;
-        letter-spacing: 1.2px;
-        color: var(--primary-color-text-dark);
-    }
-
-    .menu-list ul li {
-        display: inline-block;
-        margin-left: 36px;
-    }
+    .menu-list ul li { margin-left: 36px; }
 
     /* --- Hero --- */
     .profile {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        align-items: center;
-        text-align: start;
-        padding: 48px 48px 48px 48px;
+        padding: 48px;
         gap: 48px;
-    }
-
-    .profile-image {
-        display: flex;
-        justify-content: center;
     }
 
     .profile-image img {
@@ -588,44 +607,24 @@ footer {
         border-radius: 16px;
     }
 
-    .profile-learn-more {
-        display: flex;
-        align-items: center;
-        padding: 0;
-    }
-
     .profile-details {
         max-width: 560px;
     }
 
     .profile-details span {
-        display: block;
-        font-family: var(--font-main);
         font-size: 42px;
-        font-weight: 700;
-        color: var(--primary-color-headlines);
-        line-height: 1.2;
         margin-bottom: 20px;
     }
 
     .profile-details p {
-        display: block;
         font-size: 16px;
         line-height: 1.7;
-        color: var(--primary-color-text);
         margin: 0 0 28px 0;
     }
 
     .profile-details button {
-        display: inline-block;
-        background-color: var(--primary-color-buttons);
-        color: var(--primary-color-headlines);
-        font-family: var(--font-main);
         font-size: 15px;
-        font-weight: 600;
-        border: 2px solid var(--primary-color-headlines);
         padding: 14px 36px;
-        border-radius: 8px;
     }
 
     /* --- Sections --- */
@@ -640,17 +639,7 @@ footer {
         margin: 0 0 12px 0;
     }
 
-    .contact {
-        text-align: left;
-    }
-
-    .headline h3 {
-        font-size: 40px;
-        text-align: start;
-    }
-
-    .frame { display: none; }
-    .btn-contact { display: none; }
+    .headline h3 { font-size: 40px; }
 
     /* --- Gallery --- */
     .gallery {
@@ -668,17 +657,8 @@ footer {
         display: block;
     }
 
-    .my-works-intro {
-        display: block;
-        margin-top: 8px;
-        max-width: 720px;
-    }
-
-    .my-clients-intro {
-        display: block;
-        margin-top: 8px;
-        max-width: 720px;
-    }
+    .my-works-intro { max-width: 720px; }
+    .my-clients-intro { max-width: 720px; }
 
     /* --- Cards --- */
     .card {
@@ -694,12 +674,9 @@ footer {
     }
 
     .card h4 { font-size: 20px; }
-
     .card p { font-size: 15px; }
 
-    .card-text-content {
-        padding-right: 40px;
-    }
+    .card-text-content { padding-right: 40px; }
 
     .role-description {
         display: inline-block;
@@ -707,13 +684,7 @@ footer {
     }
 
     /* --- Contact --- */
-    #contact-me-headline { display: block; }
-
-    .contact-intro {
-        display: block;
-        margin-top: 8px;
-        max-width: 600px;
-    }
+    .contact-intro { max-width: 600px; }
 
     .get-in-touch {
         display: grid;
@@ -723,74 +694,30 @@ footer {
     }
 
     .contact-form {
-        display: block;
         grid-column: 1/2;
         grid-row: 1/4;
         padding-right: 48px;
     }
 
-    .contact-form form {
-        text-align: start;
-        padding: 0;
-    }
-
-    label {
-        display: block;
-        font-size: 14px;
-        font-weight: 500;
-        color: var(--primary-color-text-dark);
-        margin-bottom: 6px;
-    }
+    label { margin-bottom: 6px; }
 
     input, textarea {
-        display: block;
-        width: 100%;
-        background-color: var(--primary-color-buttons);
-        border: none;
-        outline: none;
         padding: 10px 14px;
-        font-family: var(--font-main);
         font-size: 15px;
-        border-radius: 4px;
         margin-bottom: 20px;
     }
 
     input { height: 44px; }
 
-    .contact-form button {
-        background-color: var(--primary-color-headlines);
-        color: #ffffff;
-        font-family: var(--font-main);
-        font-weight: 600;
-        font-size: 15px;
-        border: none;
-        padding: 13px 36px;
-        border-radius: 6px;
-        margin: 0;
-        text-transform: none;
-    }
+    .contact-form button { padding: 13px 36px; }
 
     .contact-details {
-        display: block;
         grid-column: 2/3;
         grid-row: 1/2;
         padding-bottom: 16px;
     }
 
-    .contact-details ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        font-size: 15px;
-        color: var(--primary-color-text-dark);
-    }
-
-    .contact-details ul li {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 16px;
-    }
+    .contact-details ul li { margin-bottom: 16px; }
 
     .contact-image {
         display: block;
@@ -808,29 +735,17 @@ footer {
     .social-media {
         grid-column: 2/3;
         grid-row: 3/4;
-        text-align: start;
-        padding-top: 32px;
     }
 
     .social-media h3 {
         font-size: 24px;
         margin: 0 0 16px 0;
     }
-
-    .social-media-icons ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .social-media-icons ul li {
-        display: inline-block;
-        margin: 0 16px 0 0;
-    }
 }
 
+
 /* =====================
-   INTERACTIVE EFFECTS
+   ANIMATIONS & INTERACTIONS
 ===================== */
 
 /* --- Hero fade-in --- */
